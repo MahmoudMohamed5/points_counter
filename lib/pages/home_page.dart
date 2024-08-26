@@ -5,14 +5,25 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
+      appBar: AppBar(),
       body: Column(
         children: [
-          Row(
+          const Row(
             children: [
               Column(),
               Column(),
             ],
+          ),
+          ElevatedButton(
+            onPressed: () {},
+            child: const Text(
+              '1',
+              style: TextStyle(
+                fontFamily: 'digital-7',
+                fontSize: 100,
+              ),
+            ),
           ),
         ],
       ),
