@@ -1,32 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:points_counter/widgets/landscape_layout.dart';
+import 'package:points_counter/widgets/number_button.dart';
+import 'package:points_counter/widgets/portrait_lay_out.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+  const HomePage({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
-      body: Column(
-        children: [
-          const Row(
-            children: [
-              Column(),
-              Column(),
-            ],
-          ),
-          ElevatedButton(
-            onPressed: () {},
-            child: const Text(
-              '1',
-              style: TextStyle(
-                fontFamily: 'digital-7',
-                fontSize: 100,
-              ),
-            ),
-          ),
-        ],
-      ),
+      body: SafeArea(child: OrientationBuilder(
+        builder: (context, orientation) {
+          return orientation == Orientation.portrait
+              ? const PortraitLayout()
+              : const LandscapeLayout();
+        },
+      )),
     );
   }
 }

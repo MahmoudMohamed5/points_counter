@@ -12,6 +12,7 @@ class PointsCounter extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
+      title: 'Points Counter',
       home: HomePage(),
     );
   }
